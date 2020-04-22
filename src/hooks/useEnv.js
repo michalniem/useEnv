@@ -6,8 +6,7 @@ import {
   getSystemName,
   isTouchable,
   getConnectionStatus,
-} from "./helpers";
-import matches from "./matches";
+} from "../helpers";
 
 function useEnv() {
   const [env, setEnv] = useState({
@@ -16,9 +15,9 @@ function useEnv() {
     outerHeight: window.outerHeight,
     outerWidth: window.outerWidth,
     platform: window.navigator.platform,
-    device: getDeviceName(matches.media),
-    browser: getBrowserName(matches.browsers),
-    system: getSystemName(matches.systems),
+    device: getDeviceName(),
+    browser: getBrowserName(),
+    system: getSystemName(),
     hasTouchableScreen: isTouchable(),
     connectionStatus: getConnectionStatus(),
   });
@@ -30,7 +29,7 @@ function useEnv() {
       innerWidth: target.innerWidth,
       outerHeight: target.outerHeight,
       outerWidth: target.outerWidth,
-      device: getDeviceName(matches.media),
+      device: getDeviceName(),
     }));
   }, []);
 

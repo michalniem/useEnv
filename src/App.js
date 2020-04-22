@@ -1,6 +1,6 @@
 import React from "react";
 
-import useEnv from "./useEnv";
+import useEnv from "./hooks/useEnv";
 
 function App() {
   const env = useEnv();
